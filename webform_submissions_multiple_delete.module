@@ -96,7 +96,8 @@ function webform_submissions_multiple_delete_form($form, $form_state, $node) {
  */
 function webform_submissions_multiple_delete_form_validate($form, &$form_state) {
   if (!isset($form['confirm'])) {
-    $selectsubmission = check_plain(count(array_count_values($form_state['input']['table'])));
+    dsm($form_state);
+    $selectsubmission = check_plain(count(array_count_values($form_state['values']['table'])));
     if ($selectsubmission == 0) {
       form_set_error('Select one record', t('Please Select at least one record to delete'));
     }
