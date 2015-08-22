@@ -65,7 +65,7 @@ function webform_submissions_multiple_delete_form($form, $form_state, $node) {
       $rows[$data->sid] = array(
         $data->data,
         $username,
-        format_date($data->submitted, 'short', '', date_default_timezone()) ,
+        format_date($data->submitted, 'short', '', date_default_timezone()),
       );
     }
     $form['table'] = array(
