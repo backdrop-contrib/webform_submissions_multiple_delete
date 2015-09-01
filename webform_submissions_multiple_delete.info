@@ -1,6 +1,5 @@
 name = Webform Submissions Multiple Delete
-description = Delete multiple webform submission at same time. Also provide a date filter. 
+description = Delete multiple webform submission at same time.
 package = Webform
 core = 7.x
 dependencies[] = webform
-dependencies[] = date_popup
