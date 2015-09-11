@@ -42,18 +42,20 @@ function webform_submissions_multiple_delete_form($form, $form_state, $node) {
     );
     // Creating the table header.
     $header = array(
+      array('data' => t('#'), 'field' => 'serial'),
       array('data' => t('Title'), 'field' => 'title'),
-      array('data' => t('Submitted by'), 'field' => 'submitby'),
-      array('data' => t('Submited Date'), 'field' => 'submitdate'),
+      array('data' => t('User'), 'field' => 'submitby'),
+      array('data' => t('Submitted'), 'field' => 'submitdate'),
     );
 
     $rows = array();
     // Looping for filling the table rows.
     $query = db_select('webform_submissions', 'submission');
     $query->join('webform_submitted_data', 'wsd', 'submission.sid = wsd.sid');
-    $query->fields('submission', array('sid', 'nid', 'uid', 'submitted'));
+    $query->fields('submission', array('sid', 'nid', 'uid', 'submitted', 'serial'));
     $query->fields('wsd', array('data'));
     $query->condition('submission.nid', $node->nid);
+    $query->orderBy('serial', 'DESC');
     $result = $query->execute()->fetchAll();
     foreach ($result as $data) {
       if ($data->uid == 0) {
@@ -63,6 +65,7 @@ function webform_submissions_multiple_delete_form($form, $form_state, $node) {
         $username = user_load($data->uid)->name;
       }
       $rows[$data->sid] = array(
+        $data->serial,
         $data->data,
         $username,
         format_date($data->submitted, 'short', '', date_default_timezone()),
