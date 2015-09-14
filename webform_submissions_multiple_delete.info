@@ -3,3 +3,4 @@ description = Delete multiple webform submission at same time.
 package = Webform
 core = 7.x
 dependencies[] = webform
+dependencies[] = date_popup
