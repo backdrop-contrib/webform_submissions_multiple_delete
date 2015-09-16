@@ -10,8 +10,8 @@
 function webform_submissions_multiple_delete_permission() {
   return array(
     'access administration menu' => array(
-      'title' => t('Access Webform Data Export'),
-      'description' => t('Access the Webform Data Export configuration admin pages'),
+      'title' => t('Access Webform Multiple Delete'),
+      'description' => t('Access the Webform Multiple Delete configuration admin pages'),
     ),
   );
 }
