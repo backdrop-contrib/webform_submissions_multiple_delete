@@ -9,7 +9,7 @@
  */
 function webform_submissions_multiple_delete_permission() {
   return array(
-    'access administration menu' => array(
+    'access webform multiple delete' => array(
       'title' => t('Access Webform Multiple Delete'),
       'description' => t('Access the Webform Multiple Delete configuration admin pages'),
     ),
@@ -25,7 +25,7 @@ function webform_submissions_multiple_delete_menu() {
     'title' => 'Multiple Delete',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('webform_submissions_multiple_delete_form', 1),
-    'access arguments' => array('access administration menu'),
+    'access arguments' => array('access webform multiple delete'),
     'weight' => 9,
     'type' => MENU_LOCAL_TASK,
   );
