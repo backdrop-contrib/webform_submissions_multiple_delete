@@ -1,6 +1,6 @@
 name = Webform Submissions Multiple Delete
 description = Delete multiple webform submission at same time.
 package = Webform
-core = 7.x
+backdrop = 1.x
 dependencies[] = webform
 dependencies[] = date

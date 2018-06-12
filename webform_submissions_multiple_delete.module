@@ -11,7 +11,7 @@ function webform_submissions_multiple_delete_permission() {
   return array(
     'access webform multiple delete' => array(
       'title' => t('Access Webform Multiple Delete'),
-      'description' => t('Access the Webform Multiple Delete configuration admin pages'),
+      'description' => t('Access the Webform Submissions Multiple Delete configuration admin pages'),
     ),
   );
 }
@@ -23,7 +23,7 @@ function webform_submissions_multiple_delete_menu() {
   $items = array();
   $items['node/%webform_menu/webform-results/multiple-delete'] = array(
     'title' => 'Multiple Delete',
-    'page callback' => 'drupal_get_form',
+    'page callback' => 'backdrop_get_form',
     'page arguments' => array('webform_submissions_multiple_delete_form', 1),
     'access arguments' => array('access webform multiple delete'),
     'weight' => 9,
@@ -37,9 +37,6 @@ function webform_submissions_multiple_delete_menu() {
  */
 function webform_submissions_multiple_delete_form($form, $form_state, $node) {
   if (!isset($form_state['delete_submit']['submit'])) {
-    $form['#attached']['css'] = array(
-      drupal_get_path('module', 'webform_submissions_multiple_delete') . '/css/webform_submissions_multiple_delete.css',
-    );
     // Creating the table header.
     $header = array(
       array('data' => t('#'), 'field' => 'serial'),
@@ -157,7 +154,7 @@ function webform_submissions_multiple_delete_webform_submission_process($submiss
 function webform_submissions_multiple_delete_webform_submission_complete($success, $results, $operations) {
   if (isset($results['success'])) {
     if (count($results['success']) > 0) {
-      drupal_set_message(t('@count submissions has been deleted', array('@count' => count($results['success']))));
+      backdrop_set_message(t('@count submissions has been deleted', array('@count' => count($results['success']))));
     }
   }
 }

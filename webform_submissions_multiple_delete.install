@@ -9,5 +9,5 @@
  */
 function webform_submissions_multiple_delete_install() {
   $t = get_t();
-  drupal_set_message(check_plain($t('Webform Submissions Multiple Delete Module has been successfully installed')));
+  backdrop_set_message(check_plain($t('The Webform Submissions Multiple Delete module has been successfully installed.')));
 }
