@@ -1,10 +1,12 @@
-# Introduction
+# Webform Submissions Multiple Delete
 
 This module can be used to select/deselect multiple webform submissions using
 checkboxes (including the option to select all) and then delete the selected
 submissions all at once.
 
 It adds a "Multiple Delete" subtab under the Webform's "Results" tab.
+
+![Webform Submissions Multiple Delete](https://github.com/backdrop-contrib/webform_submissions_multiple_delete/blob/1.x-1.x/images/webform_submissions_multiple_delete.png "Webform Submissions Multiple Delete screenshot")
 
 ## Installation
 
